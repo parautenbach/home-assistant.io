@@ -110,3 +110,32 @@ type:
   description: "`sections`"
   type: string
 {% endconfiguration %}
+
+### Example
+
+The position of the card is configured using YAML with the `view_layout` option:
+
+```yaml
+views:
+  - title: Home
+  - type: sections
+    max_columns: 2
+    sections:
+      - type: grid
+        cards:
+          - type: tile
+            entity: light.living_room
+          - type: tile
+            entity: light.dining_room
+        title: My Lights
+      - type: grid
+        cards:
+          - type: history-graph
+            entities:
+              - entity: light.living_room
+          - type: history-graph
+            entities:
+              - entity: light.dining_room
+        title: Lights History
+```
+
